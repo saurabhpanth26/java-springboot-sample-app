@@ -1,19 +1,20 @@
 pipeline {
         agent any 
         stages {
-            stage('Delete the workspace')
+            stage('Delete the workspace'){
                 steps {
-                    cleanWs
+                    cleanWs()
                 }
             }
-            stage('Second Stage')
+            stage('Second Stage'){
                 steps {
                     echo "Second Stage"
                 }
             }
-            stage('Third Stage')
+            stage('Third Stage'){
                 steps {
                     echo "Third Stage"
                 }
+            }
         }
 }
