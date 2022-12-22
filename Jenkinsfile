@@ -15,7 +15,7 @@ pipeline {
                     }
                     else {
                         sh 'apt update && apt ugrade -y'
-                        sh '    apt install -y weget tree unzip openjdk-11-jdk maven'
+                        sh 'apt install -y weget tree unzip openjdk-11-jdk maven'
                     }
             }
         }
