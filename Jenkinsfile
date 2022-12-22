@@ -6,7 +6,7 @@ pipeline {
             cleanWs()
           }
         }
-        stage ('Installing Java and Maven') {
+        stage('Installing Java and Maven') {
             steps {
                 script {
                     def maven_exists = fileExists '/usr/share/maven'
