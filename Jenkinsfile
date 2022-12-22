@@ -1,8 +1,20 @@
 pipeline {
     agent any
-    stages ('Download Java Code') {
-        steps{
-        git credentialsId: 'git-repo-creds', url: 'git@github.com:saurabhpanth26/java-springboot-sample-app.git'
+    stages {
+        stage('Delete the workspace') {
+          steps{
+            cleanWs()
+          }
         }
-    }
- }
+        stage ('Second Stage')
+            steps {
+                echo "Second Stage"
+            }
+        }
+        stage ('Thirs Stage')
+            steps {
+                echo "Third Stage"
+            }
+        }
+    }  
+}
