@@ -11,12 +11,12 @@ pipeline {
                 echo "Second Stage"
             }
         }
-        stage ('Third Stage'){
+        stage ('Third Stage') {
             steps {
                 echo "Third Stage"
             }
         }
-        stage ('Installing Java and Maven'){
+        stage ('Installing Java and Maven') {
             steps {
                 script {
                     def maven_exists = fileExists '/usr/share/maven'
