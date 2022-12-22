@@ -24,5 +24,4 @@ pipeline {
                 echo "Third Stage"
             }
         }
-    }
-}
+    }  
