@@ -15,7 +15,5 @@ pipeline {
                 steps {
                     echo "Third Stage"
                 }
-            }
         }
-}
 }
