@@ -7,9 +7,10 @@ pipeline {
             }
         }
         stage('Installing Java and Maven'){
-            def maven_exists = fileExists '/usr/share/maven'
-            if (maven_exists == true){
-                echo "skipping maven install - already exists"
+            steps {
+                def maven_exists = fileExists '/usr/share/maven'
+                if (maven_exists == true){
+                    echo "skipping maven install - already exists"
             }         
             else {
                 sh 'apt update && sudo apt-get upgrade -y'
