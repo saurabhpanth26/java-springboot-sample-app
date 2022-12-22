@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	Stages{
-		stage('Delete the Workspace')
+		stage('Delete the Workspace'){
 		steps{
 			cleanWs()
 		}
