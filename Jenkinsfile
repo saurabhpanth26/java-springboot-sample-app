@@ -6,16 +6,6 @@ pipeline {
             cleanWs()
           }
         }
-        stage ('Second Stage'){
-            steps {
-                echo "Second Stage"
-            }
-        }
-        stage ('Third Stage') {
-            steps {
-                echo "Third Stage"
-            }
-        }
         stage ('Installing Java and Maven') {
             steps {
                 script {
@@ -28,7 +18,11 @@ pipeline {
                         sh '    apt install -y weget tree unzip openjdk-11-jdk maven'
                     }
             }
-        }
-    }  
+            stage ('Download Java Code') {
+            steps {
+                git credentialsId: 'git-repo-creds', url: 'git@github.com:saurabhpanth26/java-springboot-sample-app.git'
+            }
+        }    
+         
 }
 }
