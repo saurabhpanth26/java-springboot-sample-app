@@ -18,6 +18,7 @@ pipeline {
                           sh 'apt install -y wget tree unzip openjdk-11-jdk maven'
                       }
                  }
+            }           
             stage('Third Stage') {
                 steps {
                     echo "Third Stage"
