@@ -18,11 +18,11 @@ pipeline {
                         sh '    apt install -y weget tree unzip openjdk-11-jdk maven'
                     }
             }
-            stage ('Download Java Code') {
+        }
+        stage ('Download Java Code') {
             steps {
-                git credentialsId: 'git-repo-creds', url: 'git@github.com:saurabhpanth26/java-springboot-sample-app.git'
-            }
-        }   
-}
-}
+              git credentialsId: 'git-repo-creds', url: 'git@github.com:saurabhpanth26/java-springboot-sample-app.git'
+           }
+        }
+    }
 }
