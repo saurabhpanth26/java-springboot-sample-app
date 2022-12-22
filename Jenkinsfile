@@ -6,11 +6,11 @@ pipeline {
                     cleanWs()
                 }
             }
-            stage ('Installing Java and Maven') {
+            stage('Installing Java and Maven'){
                 steps {
                 script {
                     def maven_exists = fileExists '/usr/share/maven'
-                    if (maven_exists == true) {
+                    if (maven_exists == true){
                         echo "Skipping maven install - already exists"
                     }
                     else {
@@ -19,7 +19,7 @@ pipeline {
                     }
                 }
             }
-            stage ('Third Stage') {
+            stage('Third Stage'){
                 steps {
                     echo "Third Stage"
                 }
