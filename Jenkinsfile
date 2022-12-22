@@ -7,6 +7,7 @@ pipeline {
             }
         }
         stage('Installing Java and Maven'){
+            steps {
             script {
                 def maven_exists = fileExists '/usr/share/maven'
                 if (maven_exists == true){
