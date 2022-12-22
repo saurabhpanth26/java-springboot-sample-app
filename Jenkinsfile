@@ -3,19 +3,19 @@ pipeline {
     stages {
         stage('Delete the workspace'){
             steps{
-                cleanWs()   
+                cleanWs()
             }
-        }    
+        }
         stage('Installing Java and Maven'){
-            script {
+            steps{
                 def maven_exists = fileExists '/usr/share/maven'
-                if (mavenexists == true){
+                if (maven_exists == true) {
                     echo "skipping maven install - already exists"
                 }
                 else {
-                    sh 'sudo apt update -y && apt upgrade -y'
-                    sh 'sudo apt install -y wget tree unzip openjdk-11-jdk maven'
-                }       
+                    sh 'apt update && sudo apt-get upgrade -y'
+                    sh 'apt install -y wget tree unzip openjdk-11-jdk maven'
+                }
         }
         stage('Thrid Stage'){
             steps{
